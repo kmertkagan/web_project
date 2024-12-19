@@ -15,7 +15,7 @@
         <h1>Blog</h1>
         <br>
         <h2>Blogları incelemek veya blog yazmak için</h2>
-        <a href="/">Tıklayınız</a> </div>
+        <a href="./articles.php">Tıklayınız</a> </div>
     </div>
   </div>
   <div class="bannerright"><img src="view/images/banner-wrap-right.jpg"/></div>

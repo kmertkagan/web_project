@@ -3,7 +3,7 @@
     <div class="primary-content">
       <div class="panel">
         <div class="title">
-          <h1>Neque porro quisquam</h1>
+          <h1>En Çok Okunanlar</h1>
           <h2>Sed ut perspiciatis unde omnis iste natus error sit voluptatem </h2>
         </div>
         <div class="content">
@@ -71,29 +71,6 @@
         </div>
       </div>
       <div class="content">
-        <div class="button-link"><a href="#">more</a></div>
-      </div>
-    </div>
-    <div class="panel">
-      <div class="title">
-        <h1>Atvero eos et accusa</h1>
-        <h2>Unde omnis iste natus error sit volup
-          tatem dolres voluuptatem quila aspern
-          fagit vitae expilca</h2>
-      </div>
-      <div class="content">
-        <p>Nam libero tempore, cum soluta nobis impedit quo minus id quod maxime placeat facere.</p>
-        <div class="right-panel">
-          <ul>
-            <li><a href="#">Maecenas a purus quis nisl interdum tincidun</a></li>
-            <li><a href="#">Cras faucibus leo sit amet quam malesuada</a></li>
-            <li><a href="#">Nullam eleifend erat faucibus ante gravi</a></li>
-            <li><a href="#">Morbi sollicitudin orci vitae sapien varius no</a></li>
-            <li><a href="#">Aenean egestas quam nec orci commodo</a></li>
-            <li><a href="#">Duis quis nisi in ante scelerisque ullamcorper</a></li>
-            <li class="borderNone"><a href="#">Ut a quam in lectus lacinia luctus ut non or</a></li>
-          </ul>
-        </div>
         <div class="button-link"><a href="#">more</a></div>
       </div>
     </div>

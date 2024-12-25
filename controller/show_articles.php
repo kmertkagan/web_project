@@ -7,8 +7,8 @@
 
 
         if (!isset($_POST["category"]) || $_POST["category"] == "All" ) {
-
-            if ($rows = $blogs->Select_Blogs("","","","","","", 4)){
+      
+            if ($rows = $blogs->Select_Blogs("","","","","","")){
                 
                 foreach($rows as $data){
                     $row = $bloggers->Select_Specified_Bloggers(["id"=>$data["id"]], 4);
@@ -28,11 +28,11 @@
             $request = $_POST["category"];
             $object = new Select();
     
-            $blogrows = $object->Select_Specified_Blogs(["category" => $request], 4);
+            $blogrows = $object->Select_Specified_Blogs(["category" => $request]);
             if ($blogrows!=null) {
 
             foreach ($blogrows as $row) {
-                $blogerows = $object->Select_Specified_Bloggers(["id"=> $row["id"]], 4);
+                $blogerows = $object->Select_Specified_Bloggers(["id"=> $row["id"]]);
                 echo "Yazar: "."<strong class='blogger'>".$blogerows[0]["username"]."</strong>";
                 echo "<a class='blog' href='http://localhost/web_project/get_article.php?id=".strval($row["id"])."'>"."<h3>".$row["title"]. "</h3></a>";
                 echo "<br>";

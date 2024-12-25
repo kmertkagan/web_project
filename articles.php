@@ -42,6 +42,7 @@ function showCategory(str) {
 
 
 
+
 <div class="logo-wrapper">
     <div class="leftshadow"><img src="view/images/logo-wrap-left.jpg" /></div>
         <div class="logo">
@@ -53,7 +54,7 @@ function showCategory(str) {
                         <h4>Kategori</h4>
                         <select onchange="showCategory(this.value)" id="category" class="contact-input" style="width: 200px;">
                             <option value="All">Hepsi</option>
-                            <option value="Bilgisayar Bilimleri">Bilgisayar Bilimleri</option>
+                            <option value="Bilgisayar+Bilimleri">Bilgisayar Bilimleri</option>
                             <option value="Matematik">Matematik</option>
                             <option value="Müzik">Müzik</option>
                             <option value="Finans">Finans</option>
@@ -77,7 +78,9 @@ function showCategory(str) {
             ?>
             </div>
             <br><br>
-            <a class="button" href="./controller/update_limit.php"><h2>Daha Fazla Gör</h2></a>
+            <form method="POST">
+              
+            </form>
     </div>
         
     <div class="rightshadow"><img src="view/images/logo-wrap-right.jpg" /></div>

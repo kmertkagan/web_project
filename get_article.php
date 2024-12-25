@@ -25,8 +25,8 @@ $update_click = new Update();
 $update_click->Update_Blog_Clicked( $get_id );
 $blogger = new Select();
 $blog = new Select();
-if ($rows = $blogger->Select_Specified_Bloggers(["id"=>$get_id],1)){
-    $blog_data = $blog->Select_Specified_Blogs(["id"=>$get_id], 1); 
+if ($rows = $blogger->Select_Specified_Bloggers(["id"=>$get_id])){
+    $blog_data = $blog->Select_Specified_Blogs(["id"=>$get_id]); 
     foreach ($rows as $row) 
     {
         

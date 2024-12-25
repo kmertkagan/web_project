@@ -13,7 +13,7 @@ class Select extends Connection {
     }
 
 
-    public function Select_Blogs($id, $title, $category, $blog, $posted_on, $clicked, $limit) {
+    public function Select_Blogs($id, $title, $category, $blog, $posted_on, $clicked) {
         $filter = "*"; # default
 
         $check = [$id, $title, $category, $blog, $posted_on, $clicked];
@@ -27,7 +27,7 @@ class Select extends Connection {
         }
 
 
-        $query = "SELECT ". "$filter " ."FROM blog_posts". " LIMIT ".$limit;
+        $query = "SELECT ". "$filter " ."FROM blog_posts";
         $result = mysqli_query($this->con->connect(), $query);
         if (mysqli_num_rows($result) > 0) {
 
@@ -40,7 +40,7 @@ class Select extends Connection {
         return null;
     }
 
-    public function Select_Bloggers($id, $username, $name, $surname, $age, $gender, $limit) {
+    public function Select_Bloggers($id, $username, $name, $surname, $age, $gender) {
         $filter = "*"; # default
 
         $check = [$id, $username, $name, $surname, $age, $gender];
@@ -52,7 +52,7 @@ class Select extends Connection {
         if (count($check) > 0) {
             $filter = join(",", $check);            
         }
-        $query = "SELECT ". "$filter " ."FROM bloggers". " LIMIT ".$limit;
+        $query = "SELECT ". "$filter " ."FROM bloggers";
         $result = mysqli_query($this->con->connect(), $query);
         if (mysqli_num_rows($result) > 0) {
 
@@ -65,7 +65,7 @@ class Select extends Connection {
         return null;
     }
 
-    public function Select_Specified_Bloggers(array $check, int $limit) {
+    public function Select_Specified_Bloggers(array $check) {
         $filter = "1"; # default
         
         foreach ($check as $key => $value) {
@@ -80,7 +80,7 @@ class Select extends Connection {
             }
             $filter = join(" AND ", $filter2);
         }       
-        $query = "SELECT * FROM bloggers WHERE ".$filter." LIMIT ".$limit;
+        $query = "SELECT * FROM bloggers WHERE ".$filter;
 
         $result = mysqli_query($this->con->connect(), $query);
         if (mysqli_num_rows($result) > 0) {
@@ -94,7 +94,7 @@ class Select extends Connection {
         return null;
     }
 
-    public function Select_Specified_Blogs(array $check, int $limit) {
+    public function Select_Specified_Blogs(array $check) {
         $filter = "1"; # default
         
         foreach ($check as $key => $value) {
@@ -109,7 +109,7 @@ class Select extends Connection {
             }
             $filter = join(" AND ", $filter2);
         }       
-        $query = "SELECT * FROM blog_posts WHERE ".$filter." LIMIT ".$limit;
+        $query = "SELECT * FROM blog_posts WHERE ".$filter;
         $result = mysqli_query($this->con->connect(), $query);
         if (mysqli_num_rows($result) > 0) {
 

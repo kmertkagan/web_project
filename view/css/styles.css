@@ -15,7 +15,33 @@ img { border:none; }
 img { border:none;}
 h1{font-family:"Trebuchet MS"; color:#f9f9f9; font-size:25px; font-weight:normal; text-transform:uppercase;}
 h2{font-family: 'Open Sans', sans-serif; font-size:15px; color:#96577a; font-weight:normal;}
+/*new button*/
+.btn-class-name {
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #000000;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
 
+.btn-class-name:hover {
+  background: #22013a;
+}
+
+.btn-class-name > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-class-name:hover svg {
+  transform: translateX(5px);
+}
 
 /*-------------------------------------------------
 CSS TWEAKS

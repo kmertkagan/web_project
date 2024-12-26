@@ -40,9 +40,6 @@ function showCategory(str) {
 }
 </script>
 
-
-
-
 <div class="logo-wrapper">
     <div class="leftshadow"><img src="view/images/logo-wrap-left.jpg" /></div>
         <div class="logo">
@@ -68,7 +65,7 @@ function showCategory(str) {
                     </li>
                 </ul>
             </form>
-            <br><br>
+            <br>
 
             
             <div id="main">

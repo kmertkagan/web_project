@@ -6,6 +6,7 @@ body{background:#26313f;}
 
 p {font-family:"Trebuchet MS"; color:#ffffff; font-size:13px; line-height:20px;}
 strong.blogger {font-family:"Trebuchet MS"; color:#579693}
+strong.blogs {font-family:"Trebuchet MS"; color:#e63e9a}
 a { text-decoration:none; color:#668ab9;}
 a.blog { text-decoration:none; color:#96577a;}
 a h3 { text-decoration:none; color:#96577a;}
@@ -237,3 +238,19 @@ FOOTER CLASSS
 .footer-wrapper{width:100%; background:#2c3847; overflow:hidden;}
 .footer{width:960px; margin:0 auto; margin-top:50px;}
 .footer p{ text-align:center; padding-bottom:50px;}
+
+
+
+/* For Blog */
+
+.show_article{font-family: Georgia, Times, 'Times New Roman', serif;}
+.show_article h1{font-family: Georgia, Times, 'Times New Roman', serif; font-size: 34px; color: #ee138c;}
+.show_article h2{font-family: Georgia, Times, 'Times New Roman', serif; font-size: 30px; color: #d01079;}
+.show_article h3{font-family: Georgia, Times, 'Times New Roman', serif; font-size: 24px; color: #b40f6a;}
+.show_article h4{font-family: Georgia, Times, 'Times New Roman', serif; font-size: 20px;}
+.show_article p{font-family: Georgia, Times, 'Times New Roman', serif;}
+.show_article strong{font-family: Georgia, Times, 'Times New Roman', serif; color: #96577a;}
+.show_article li{font-family: Georgia, Times, 'Times New Roman', serif;}
+.show_article ul{font-family: Georgia, Times, 'Times New Roman', serif;}
+
+

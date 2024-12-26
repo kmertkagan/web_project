@@ -13,9 +13,10 @@
           $most_clicked = $most_clicked_posts[0];
           echo "<h2>".$most_clicked["title"]."</h2>";
           echo "</div>";
+          echo "<img src='./view/images/icons8-click-50.png' width='22' height='22'>".$most_clicked["clicked"];
           echo "<div class='content'>";
           echo "<p>".substr($most_clicked["blog"], 0, 250)."..."."</p>";
-          echo "</div>";
+          echo "</div>";          
           echo "<div class='button-link'>"."<a href='get_article.php?id=".$most_clicked["id"]."'>Oku</a></div>"
           ?>
       </div>

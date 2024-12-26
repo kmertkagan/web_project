@@ -31,9 +31,9 @@ if ($rows = $blogger->Select_Specified_Bloggers(["id"=>$get_id])){
     {
         
         echo "<h2>Yazar: "."<strong class='blogger'>".$row["username"]."</strong>"."</h2>";
-        echo "<h2>Yazım Tarihi: "."<strong class='blogger'>".$blog_data[0]["posted_on"]."</strong>"."</h2><br>";
+        echo "<h2>Yazım Tarihi: "."<strong class='blogger'>".$blog_data[0]["posted_on"]."</strong>"."</h2><br><div class='show_article'>";
         echo "<h1>".$blog_data[0]["title"]."</h1><br>";
-        echo $blog_data[0]["blog"];
+        echo $blog_data[0]["blog"]."</div>";
     }
 }
 

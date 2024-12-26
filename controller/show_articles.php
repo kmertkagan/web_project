@@ -9,9 +9,10 @@
         if (!isset($_POST["category"]) || $_POST["category"] == "All" ) {
       
             if ($rows = $blogs->Select_Blogs("","","","","","")){
-                
+                $textnum = count($rows);
+                echo "<strong class='blogs'>".$textnum."</strong> adet yazı var.<br><br>";
                 foreach($rows as $data){
-                    $row = $bloggers->Select_Specified_Bloggers(["id"=>$data["id"]], 4);
+                    $row = $bloggers->Select_Specified_Bloggers(["id"=>$data["id"]]);
                     echo "Yazar: "."<strong class='blogger'>".$row[0]["username"]."</strong>";
                     echo "<a class='blog' href='http://localhost/web_project/get_article.php?id=".strval($data["id"])."'>"."<h3>".$data["title"]. "</h3></a>";
                     echo "<br>";
@@ -30,7 +31,8 @@
     
             $blogrows = $object->Select_Specified_Blogs(["category" => $request]);
             if ($blogrows!=null) {
-
+                $textnum = count($blogrows);
+                echo "<strong class='blogs'>".$textnum."</strong> adet yazı var.<br><br>";
             foreach ($blogrows as $row) {
                 $blogerows = $object->Select_Specified_Bloggers(["id"=> $row["id"]]);
                 echo "Yazar: "."<strong class='blogger'>".$blogerows[0]["username"]."</strong>";
@@ -42,7 +44,7 @@
             }
         }
         else {
-            echo null;
+            echo "<strong class='blogs'>0</strong> adet yazı var.<br><br>";
         }
 
         }

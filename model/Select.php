@@ -76,22 +76,27 @@ class Select extends Connection {
         if (count($check) > 0) {
             $filter2 = []; # for use join
             foreach ($check as $key => $value) {
-                $filter2[] = "$key='$value'";            
+                $value = mysqli_escape_string($this->con->connect(),$value); # for sqli
+                $filter2[] = "$key='$value'";
+                            
             }
             $filter = join(" AND ", $filter2);
-        }       
-        $query = "SELECT * FROM bloggers WHERE ".$filter;
+        } 
 
+        $query = "SELECT * FROM bloggers WHERE ".$filter;
         $result = mysqli_query($this->con->connect(), $query);
         if (mysqli_num_rows($result) > 0) {
 
             while ($row = $result->fetch_assoc()){ 
                 $rows[] = $row; 
             }
-            $this->con->connect()->close();
-            return $rows;
+            if (count($rows) > 0) {
+                return $rows;
+            } else { return null;}
         }
-        return null;
+        else{
+            return null;
+        }
     }
 
     public function Select_Specified_Blogs(array $check) {
@@ -105,6 +110,7 @@ class Select extends Connection {
         if (count($check) > 0) {
             $filter2 = []; # for use join
             foreach ($check as $key => $value) {
+                $value = mysqli_escape_string($this->con->connect(),$value); # for sqli
                 $filter2[] = "$key='$value'";            
             }
             $filter = join(" AND ", $filter2);
@@ -117,10 +123,13 @@ class Select extends Connection {
                 $rows[] = $row; 
             }
             $this->con->connect()->close();
-            return $rows;
+            if (count($rows) > 0) {
+                return $rows;
+            } else { return null;}
         }
         else {
             return null;
+
         }
     }
 

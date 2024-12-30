@@ -55,5 +55,17 @@
 	<label>Cinsiyet</label> <br><br>
 	<input type="radio" name="gender" value="1"> Erkek 
 	<input type="radio" name="gender" value="0"> Kadın <br><br>
+	<label>Robot olmadığınızı kanıtlamak için görseldeki metni yazın</label><br>
+	<img src="controller/captcha.php" id="capt" onclick="return false;">
+    <input type=button style="background: #2c3847;color: #ffffff" onClick=reload(); value='Tekrar Yükle'><br><br>
+	<input type="text" id="cap_value" name="cap_value" required><br><br>
 	<input class="button-link" type="submit">
 </form>
+
+
+<script type="text/javascript">
+    function reload() {
+        img = document.getElementById("capt");
+        img.src = "controller/captcha.php"
+    }
+</script>

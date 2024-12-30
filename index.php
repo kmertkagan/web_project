@@ -17,7 +17,6 @@
 <?php include "view/container.php"?>
 <!--- end -->
 
-<?php include "controller/chart.php"?>
 
 
 </body>

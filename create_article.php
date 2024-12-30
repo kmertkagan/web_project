@@ -9,12 +9,15 @@
 <?php include "view/header.php" ?>
 <!-- End -->
 
+
 <?php
 
 include "./model/Insert.php";
 
+session_start();
 
-if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["blog"]) && isset($_POST["username"]))
+
+if (isset($_POST["cap_value"]) && isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["blog"]) && isset($_POST["username"]))
 { 
     $title = $_POST["title"];
     $category = $_POST["category"];
@@ -28,14 +31,20 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["blog"])
     $q1 = new Insert();
     $q2 = new Insert();
 
+
     date_default_timezone_set('Europe/Istanbul');
     $date = date("Y-m-d H:i");
-    if ($q1->Insert_Bloggers_Table($username, $name, $surname, $age, $gender) && $q2->Insert_Blog_Posts_Table($title ,$category, $blog, $date, 0))
-    {
-        header("Location: ". "http://localhost/web_project/articles.php");
+    if ($_POST["cap_value"] == $_SESSION["captcha"]){
 
+        if ($q1->Insert_Bloggers_Table($username, $name, $surname, $age, $gender) && $q2->Insert_Blog_Posts_Table($title ,$category, $blog, $date, 0))
+        {   
+            header("Location: ". "articles.php");            
+        }
     }
-    
+    else {
+        echo "<div class='logo-wrapper'>";
+        echo "<strong style='color: red'>Doğrulamayı Yanlış!</strong></div>";
+    }       
 }    
 ?>
 

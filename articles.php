@@ -82,7 +82,7 @@ function showCategory(str) {
         
     <div class="rightshadow"><img src="view/images/logo-wrap-right.jpg" /></div>
     <div class="contact-form"><br>
-        <a class="button" href="./create_article.php">Blog Oluştur</a>       
+        <a class="button" href="create_article.php">Blog Oluştur</a>       
     </div>
     
 </div>

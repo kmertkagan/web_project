@@ -1,0 +1,4 @@
+User-Agent: *
+
+Disallow: /README.md 
+Disallow: /.htaccess

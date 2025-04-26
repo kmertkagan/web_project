@@ -59,7 +59,7 @@
 	<img src="controller/captcha.php" id="capt" onclick="return false;">
     <input type=button style="background: #2c3847;color: #ffffff" onClick=reload(); value='Tekrar Yükle'><br><br>
 	<input type="text" id="cap_value" name="cap_value" required><br><br>
-	<input class="button-link" type="submit">
+	<input class="button-link" type="submit" value="Gönder">
 </form>
 
 

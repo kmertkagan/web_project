@@ -25,10 +25,10 @@ class Insert extends Connection {
         }
     }
 
-    public function Insert_Blog_Posts_Table($title, $category, $blog, $posted_on, $clicked) {
+    public function Insert_Blog_Posts_Table($bloggerId, $title, $category, $blog, $posted_on, $clicked) {
 
-        $query = "INSERT INTO blog_posts (title ,category, blog, posted_on, clicked) VALUES (?, ?, ?, ?, ?)"; 
-        if ($this->con->connect()->execute_query($query,[$title ,$category, $blog, $posted_on, $clicked])){
+        $query = "INSERT INTO blog_posts (bloggerId, title ,category, blog, posted_on, clicked) VALUES (?,?, ?, ?, ?, ?)"; 
+        if ($this->con->connect()->execute_query($query,[$bloggerId, $title, $category, $blog, $posted_on, $clicked])){
             echo "Başariyla Kaydedildi";
             $this->con->connect()->close();
             return true;

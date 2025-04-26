@@ -14,7 +14,6 @@
 
 include "./model/Insert.php";
 
-session_start();
 
 
 if (isset($_POST["cap_value"]) && isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["blog"]) && isset($_POST["username"]))

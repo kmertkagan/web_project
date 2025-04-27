@@ -45,6 +45,25 @@ class Update extends Connection {
         }
     }
 
+    public function Update_BloggerPassword($id, $old_password, $new_password){
+        $user = new Select();
+
+        if($user_data = $user->Select_Specified_Bloggers(["id"=>$id])){
+            if ($user_data[0]["password"] == $old_password){
+                $query = "UPDATE bloggers SET password = ? where id = ?";
+                if ($this->con->connect()->execute_query($query, [$new_password, $id])) {  // set properly parameters in $params
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+        else
+        {
+            return false;
+        } 
+    }
 }
 
 

@@ -35,6 +35,6 @@
   </defs>
 </svg>
 
-<h2>KAYBOLDUN GALİBA. <a href="index.php">EVE DÖN</a></h2>
+<h2>KAYBOLDUN GALİBA. <a href="index">EVE DÖN</a></h2>
     </body>
 </html>

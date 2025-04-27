@@ -68,6 +68,7 @@ class Select extends Connection {
     public function Select_Specified_Bloggers(array $check) {
         $filter = "1"; # default
         
+        // check inputs and set the query
         foreach ($check as $key => $value) {
             if (empty($value)) {
                 unset($check[$key]);
@@ -76,13 +77,14 @@ class Select extends Connection {
         if (count($check) > 0) {
             $filter2 = []; # for use join
             foreach ($check as $key => $value) {
-                $value = mysqli_escape_string($this->con->connect(),$value); # for sqli
-                $filter2[] = "$key='$value'";
+                $value = mysqli_escape_string($this->con->connect(),$value); # for prevent sqli
+                $filter2[] = "$key='$value'"; // basically adding a new element to arraylist, https://www.php.net/manual/en/language.types.array.php look at the example 10 (f*ck the php)
                             
             }
             $filter = join(" AND ", $filter2);
         } 
 
+        // execute query and return the $rows  
         $query = "SELECT * FROM bloggers WHERE ".$filter;
         $result = mysqli_query($this->con->connect(), $query);
         if (mysqli_num_rows($result) > 0) {
@@ -112,8 +114,8 @@ class Select extends Connection {
         if (count($check) > 0) {
             $filter2 = []; # for use join
             foreach ($check as $key => $value) {
-                $value = mysqli_escape_string($this->con->connect(),$value); # for sqli
-                $filter2[] = "$key='$value'";            
+                $value = mysqli_escape_string($this->con->connect(),$value); # for prevent sqli
+                $filter2[] = "$key='$value'"; // basically adding a new element to arraylist, https://www.php.net/manual/en/language.types.array.php look at the example 10 (f*ck the php)          
             }
             $filter = join(" AND ", $filter2);
         }       

@@ -24,7 +24,6 @@ class Bloggers extends Connection{
         }
     }
 
-
 }
 
 

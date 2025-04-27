@@ -29,6 +29,21 @@ class Update extends Connection {
 
         }
     }
+    public function Update_Blogger_Data($id, $username, $name, $surname, $age, $gender) {
+        $isExist = new Select();
+        if ($isExist->Select_Specified_Bloggers(["username" => $username])){
+            return false;
+        }
+        else {            
+            $query = "UPDATE bloggers SET username = ?, name = ?, surname = ?, age = ?, gender = ? WHERE id = ?";
+            if ($this->con->connect()->execute_query($query, [$username, $name, $surname, $age, $gender, $id])){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
 
 }
 

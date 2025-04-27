@@ -21,12 +21,13 @@ if (isset($_SESSION["username"])) {
     echo "<br><br><br>";
     include "view/ckeditor.php";
     echo "<div class=\"rightshadow\"><img src=\"view/images/logo-wrap-right.jpg\" /></div>";
-    echo "</div>";
-    if (isset($_POST["cap_value"]) && isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["blog"]) && isset($_POST["username"]))
+
+    if (isset($_POST["cap_value"]) && isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["blog"]))
     { 
         $title = $_POST["title"];
         $category = $_POST["category"];
         $blog = $_POST["blog"];
+        $user_captcha = $_POST["cap_value"];
         
         $bloggerId = $_SESSION["id"];
         $username = $_SESSION["username"];
@@ -34,22 +35,26 @@ if (isset($_SESSION["username"])) {
         $surname = $_SESSION["surname"];
         $age = $_SESSION["age"];
         $gender = $_SESSION["gender"];
+        $real_captcha = $_SESSION["captcha"];
         
-        $q1 = new Insert();
+
+        $q1 = new Insert();        
+        http_response_code(400);
         
         
         date_default_timezone_set('Europe/Istanbul');
         $date = date("Y-m-d H:i");
-        if ($_POST["cap_value"] == $_SESSION["captcha"]){
-            
+        if ($user_captcha == $real_captcha){
+            http_response_code(400);
             if ($q1->Insert_Blog_Posts_Table($bloggerId,$title ,$category, $blog, $date, 0))
             {   
+                echo "<script>alert(\"Blog Başarıyla oluşturuldu.\")</script>";
                 header("Location: ". "articles.php");            
             }
         }
         else {
-            echo "<div class='logo-wrapper'>";
-            echo "<strong style='color: red'>Doğrulamayı Yanlış!</strong></div>";
+            http_response_code(400);        
+            echo "<strong style='color: red'>Doğrulamay Yanlış!</strong></div>";
         }       
     }    
 }
@@ -57,7 +62,7 @@ else {
     http_response_code(403);echo "<div class=\"logo-wrapper\">";
     echo "<div class=\"leftshadow\"><img src=\"view/images/logo-wrap-left.jpg\" /></div>";
     echo "<br><br><br>";
-    echo "Bu işlemi yapmak için yetkiniz yok. Lütfen kayıt olup tekrar deneyin";
+    echo "Bu işlemi yapmak için yetkiniz yok. Ancak kayıtlı kullanıcılar blog yazabilir.";
     echo "<div class=\"rightshadow\"><img src=\"view/images/logo-wrap-right.jpg\" /></div>";
     echo "</div>";
 }

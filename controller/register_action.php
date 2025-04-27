@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include __DIR__."/../model/Bloggers.php";
 include __DIR__."/../model/Select.php";
 
@@ -15,7 +15,6 @@ if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["confi
             # eğer kullanıcı mevcutsa
             http_response_code(400);
             echo(json_encode(["success"=>false, "message"=> "Kullanici adi sistemde mevcut. Lutfen baska bir kullanci adiyla kayit olunuz."]));
-
         }
         else {
             $username = $_POST["username"];
@@ -28,8 +27,7 @@ if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["confi
             $save_user = new Bloggers();
             if ($save_user->Insert_BloggerUser($username, $password, $name, $surname, $age, $gender)){
                 http_response_code(200);
-                $_SESSION["user"];
-                echo(json_encode(["success"=>true, "message"=>"Basariyla kayit oldunuz."]));
+                echo(json_encode(["success"=>true, "message"=>"Basariyla kayit oldunuz. Giris yapabilirsiniz."]));
             }
             else{
                 http_response_code(400);

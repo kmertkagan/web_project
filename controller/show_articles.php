@@ -12,7 +12,7 @@
                 $textnum = count($rows);
                 echo "<strong class='blogs'>".$textnum."</strong> adet yazı var.<br><br>";
                 foreach($rows as $data){
-                    $row = $bloggers->Select_Specified_Bloggers(["id"=>$data["id"]]);
+                    $row = $bloggers->Select_Specified_Bloggers(["id"=>$data["bloggerId"]]);
                     echo "Yazar: "."<strong class='blogger'>".$row[0]["username"]."</strong>";
                     echo "<a class='blog' href='get_article.php?id=".strval($data["id"])."'>"."<h3>".$data["title"]. "</h3></a>";
                     echo "<br>";
@@ -34,7 +34,7 @@
                 $textnum = count($blogrows);
                 echo "<strong class='blogs'>".$textnum."</strong> adet yazı var.<br><br>";
                 foreach ($blogrows as $row) {
-                    $blogerows = $object->Select_Specified_Bloggers(["id"=> $row["id"]]);
+                    $blogerows = $object->Select_Specified_Bloggers(["id"=> $row["bloggerId"]]);
                     echo "Yazar: "."<strong class='blogger'>".$blogerows[0]["username"]."</strong>";
                     echo "<a class='blog' href='get_article.php?id=".strval($row["id"])."'>"."<h3>".$row["title"]. "</h3></a>";
                     echo "<br>";

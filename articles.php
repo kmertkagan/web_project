@@ -45,25 +45,28 @@ function showCategory(str) {
         <div class="logo">
             <h1>Bloglar</h1>
             <hr><br>
+
+            
             <form method="POST">
-                <ul>
-                    <li>
-                        <h4>Kategori</h4>
-                        <select onchange="showCategory(this.value)" id="category" class="contact-input" style="width: 200px;">
-                            <option value="All">Hepsi</option>
-                            <option value="Bilgisayar+Bilimleri">Bilgisayar Bilimleri</option>
-                            <option value="Matematik">Matematik</option>
-                            <option value="Müzik">Müzik</option>
-                            <option value="Finans">Finans</option>
-                            <option value="Yemek">Yemek</option>
-                            <option value="Siyaset">Siyaset</option>		
-                            <option value="Film-Dizi">Film-Dizi</option>
-                            <option value="Spor">Spor</option>
-                            <option value="Moda">Moda</option>	
-                            <option value="Başka Bir Konu">Başka Bir Konu</option>
-                        </select>
-                    </li>
-                </ul>
+              <ul>
+                <li>
+                  <h4>Kategori</h4>
+                  <select onchange="showCategory(this.value)" id="category" class="contact-input" style="width: 200px;">
+                    <option value="All">Hepsi</option>
+                    <option value="Bilgisayar+Bilimleri">Bilgisayar Bilimleri</option>
+                    <option value="Matematik">Matematik</option>
+                    <option value="Müzik">Müzik</option>
+                    <option value="Finans">Finans</option>
+                    <option value="Yemek">Yemek</option>
+                    <option value="Siyaset">Siyaset</option>		
+                    <option value="Film-Dizi">Film-Dizi</option>
+                    <option value="Spor">Spor</option>
+                    <option value="Moda">Moda</option>	
+                    <option value="Başka Bir Konu">Başka Bir Konu</option>
+                  </select>
+                  <a class="button" href="create_article.php">Blog Oluştur</a>       
+                </li>
+              </ul>
             </form>
             <br>
 
@@ -81,9 +84,7 @@ function showCategory(str) {
     </div>
         
     <div class="rightshadow"><img src="view/images/logo-wrap-right.jpg" /></div>
-    <div class="contact-form"><br>
-        <a class="button" href="create_article.php">Blog Oluştur</a>       
-    </div>
+    
     
 </div>
 

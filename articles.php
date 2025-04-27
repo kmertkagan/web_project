@@ -64,7 +64,7 @@ function showCategory(str) {
                     <option value="Moda">Moda</option>	
                     <option value="Başka Bir Konu">Başka Bir Konu</option>
                   </select>
-                  <a class="button" href="create_article.php">Blog Oluştur</a>       
+                  <a class="button" href="create_article">Blog Oluştur</a>       
                 </li>
               </ul>
             </form>

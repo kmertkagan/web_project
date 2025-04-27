@@ -17,7 +17,7 @@
           echo "<h2>Hoşgeldiniz ".$_SESSION["username"]."</h2>";
           echo "<br>";
           echo "<h2>Blogları incelemek veya blog yazmak için</h2>";
-          echo "<a href=\"./articles.php\">Tıklayınız</a> </div>";
+          echo "<a href=\"./articles\">Tıklayınız</a> </div>";
         }
         ?>
     </div>

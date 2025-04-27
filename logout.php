@@ -4,7 +4,7 @@
 <body>    
 <script>
 setTimeout(() => {
-    window.location.href = "index.php";
+    window.location.href = "index";
 }, 1000);
 </script>
 <?php

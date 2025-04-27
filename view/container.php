@@ -17,7 +17,7 @@
           echo "<div class='content'>";
           echo "<p>".substr($most_clicked["blog"], 0, 250)."..."."</p>";
           echo "</div>";          
-          echo "<div class='button-link'>"."<a href='get_article.php?id=".$most_clicked["id"]."'>Oku</a></div>"
+          echo "<div class='button-link'>"."<a href='get_article?id=".$most_clicked["id"]."'>Oku</a></div>"
           ?>
       </div>
     </div>

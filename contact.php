@@ -29,7 +29,7 @@ if (isset($_POST["mail"]) && isset($_POST["text"])) {
     $mail = $_POST["mail"];
     $insertion = new Insert();
     if ($insertion->Insert_Contacts_Table($mail, $text)){
-        header("Location: ". "http://localhost/web_project/articles.php");
+        header("Location: ". "http://localhost/web_project/articles");
     }
     else {
         echo "mesaj gönderilemedi...";

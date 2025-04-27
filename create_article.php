@@ -45,16 +45,16 @@ if (isset($_SESSION["username"])) {
         date_default_timezone_set('Europe/Istanbul');
         $date = date("Y-m-d H:i");
         if ($user_captcha == $real_captcha){
-            http_response_code(400);
             if ($q1->Insert_Blog_Posts_Table($bloggerId,$title ,$category, $blog, $date, 0))
             {   
-                echo "<script>alert(\"Blog Başarıyla oluşturuldu.\")</script>";
-                header("Location: ". "articles.php");            
+                echo "Blog Oluşturuldu.";
+                sleep(2);
+                header("Location: ". "articles");            
             }
         }
         else {
             http_response_code(400);        
-            echo "<strong style='color: red'>Doğrulamay Yanlış!</strong></div>";
+            echo "<strong style='color: red'>Doğrulama Yanlış!</strong></div>";
         }       
     }    
 }

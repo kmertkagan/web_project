@@ -92,7 +92,9 @@ class Select extends Connection {
             }
             if (count($rows) > 0) {
                 return $rows;
-            } else { return null;}
+            } else { 
+                return null;
+            }
         }
         else{
             return null;

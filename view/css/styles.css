@@ -80,6 +80,10 @@ HEADER CLASSES
 .menu ul li a[disabled]{width:100px; height:40px; line-height:40px; display:block; font-family: 'Open Sans', sans-serif; font-size:14px; color:#666666; text-align:center; text-transform:uppercase;}
 .menu ul li a[disabled]:hover{background-color: #96577a;color: #666666}
 .menu ul li a.active{background:#96577a; color:#ffffff; width:100px; height:40px;}
+.menu ul li a.logout{color:#dc1d1d; width:100px; height:40px;}
+.menu ul li a.logout:hover{background-color: #dc1d1d; color:#ffffff; width:100px; height:40px;}
+
+
 
 
 .call{width:194px; float:right; margin-right:17px;}
@@ -93,7 +97,7 @@ HEADER CLASSES
 .rightshadow{width:10px; float:right;}
 .logo{width:1000px; float:left;}
 .logo h1{font-family:"Trebuchet MS"; font-size:42px; color:#579693; text-transform:uppercase; padding-left:20px; padding-top:25px;}
-
+.logo .button{padding:8px;background:#96577a;text-transform:uppercase;font-family:"Trebuchet MS"; color:#fff;border:0px solid;margin-left:100px;margin-top:20px;}
 /*-------------------------------------------------
 BANNER CLASSES
 -------------------------------------------------*/

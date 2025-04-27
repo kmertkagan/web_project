@@ -1,12 +1,6 @@
 <script>
 
 	$(document).ready(function(){
-		$("#uname").mousemove(function(){
-			$("#uyari1").show();
-		});
-		$("#uname").mouseleave(function(){
-			$("#uyari1").hide();
-		});
 		$("#cate").mousemove(function(){
 			$("#uyari2").show();
 		});
@@ -43,7 +37,7 @@
 		<option value="Moda">Moda</option>	
     	<option value="Başka Bir Konu">Başka Bir Konu</option>
   	</select><br><br><br>
-	<img src="controller/captcha.php" id="capt" onclick="return false;">
+	<img src="controller/captcha.php" id="capt" onclick="return false;"><br><br>
     <input type=button style="background: #2c3847;color: #ffffff" onClick=reload(); value='Tekrar Yükle'><br><br>
 	<input type="text" id="cap_value" name="cap_value" required><br><br>
 	<input class="button-link" type="submit" value="Gönder">
@@ -53,6 +47,6 @@
 <script type="text/javascript">
     function reload() {
         img = document.getElementById("capt");
-        img.src = "controller/captcha.php"
+        img.src = "controller/captcha.php?rand=" + Math.random();;
     }
 </script>

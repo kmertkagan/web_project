@@ -1,17 +1,16 @@
-<!-- Head -->
-<?php include "view/head.html" ?>
-<!-- End -->
-<body>    
-
-<!-- Header -->
-<?php include "view/header.php" ?>
-<!-- End -->
-
-<script src="view/js/tinymce/tinymce.min.js"></script>
-<script src="view/js/tinymce/init.js"></script>
+<script>
+function showPassword(){
+    var input = document.getElementById("password");
+    if (input.type === "password") {
+    input.type = "text";
+    } else {
+    input.type = "password";
+    }    
+}
+</script>
 <script>
 $(document).ready(function() {
-    $("#register").on("submit", function(e) {
+    $("#login").on("submit", function(e) {
         e.preventDefault(); // Formun kendi submitini engelle
 
         $.ajax({
@@ -22,11 +21,11 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success) {
                     $("#message").css("color", "#04ff00").text(response.message);
-                    $("#register")[0].reset();
+                    $("#login")[0].reset();
                     // yönlendirme
                     setTimeout(() => {
-                        window.location.href = "login";
-                    }, 1000); 
+                        window.location.href = "index";
+                    }, 1000);
                 } else {
                     $("#message").css("color", "red").text(response.message);
                 }
@@ -43,17 +42,17 @@ $(document).ready(function() {
         });
     });
 });
+
 </script>
+<br><br><br>
+    <form method="POST" action="controller/login_action.php" id="login">
+        <label>Kullanıcı Adı</label>
+        <input class="contact-input" type="text" name="username" id="username">
+        <label>Şifre</label>
+        <input class="contact-input" type="password" name="password" id="password"><br>
+        <input class="" type="checkbox" onclick="showPassword()"> Parolayı göster <br>
+        <input class="button-link" type="submit" value="Giriş Yap">
+    </form>
+    <div id="message">
 
-
-<div class="logo-wrapper">
-<?php
-if (isset($_SESSION["username"])){
-    echo $_SESSION["username"]. ", hesabınız zaten var?";
-}
-else {
-    include_once __DIR__."/view/register_view.php";
-}   
-?>
-</div>
-
+    </div>

@@ -4,7 +4,7 @@ include __DIR__."/../model/Bloggers.php";
 include __DIR__."/../model/Select.php";
 
 header("Content-Type: application/json;charset=UTF-8");
-# are they really exist? 
+# do they really exist? 
 if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["confirm_password"]) && isset($_POST["name"]) && isset($_POST["surname"]) && isset($_POST["age"]) && isset($_POST["gender"])){
 
     if(($_POST["password"] == $_POST["confirm_password"])){

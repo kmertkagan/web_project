@@ -20,7 +20,6 @@
         </div>
 <?php
 
-
 include_once "./model/Select.php";
 include_once "./model/Update.php";
 
@@ -33,16 +32,21 @@ if ($blog_datas = $blog->Select_Specified_Blogs(["id"=>$get_id])){
     $update_click->Update_Blog_Clicked( $get_id );
     $blogger_data = $blogger->Select_Specified_Bloggers(["id"=>$blog_datas[0]["bloggerId"]]);
     // print_r($blogger_data[0]);
-    foreach ($blog_datas as $blog_data) 
-    {
-        
-        echo "<h2>Yazar: "."<strong class='blogger'>".$blogger_data[0]["username"]."</strong>"."</h2>";
-        echo "<h2>Yazım Tarihi: "."<strong class='blogger'>".$blog_data["posted_on"]."</strong>"."</h2><br><div class='show_article'>";
-        echo "<h1 class=\"title\">".$blog_data["title"]."</h1><br>";
-        echo $blog_data["blog"]."</div>";
+    if (($_SESSION['id'] ?? null) == $blogger_data[0]['id']) { // yazar gerçekten blogu yazan kişi mi? eğer id'si yoksa null döner bu da zaten sağlanmaz
+
+        foreach ($blog_datas as $blog_data) 
+        {
+            include_once __DIR__."/view/ckeditor_update.php";
+        }
+    }
+    else {
+        http_response_code(403);
+        echo "<strong style=\"color:red\">Blog sahibi değilsiniz, o yüzden blog'u düzenleyemezsiniz!  </strong><br><br>";
+        echo "<img src=\"view/images/yasak-ersoy.gif\">";
     }
 }
 
 ?>
 </div>
 </div>
+

@@ -57,6 +57,8 @@ class Update extends Connection {
                 else {
                     return false;
                 }
+            } else {
+                return false;
             }
         }
         else
@@ -64,6 +66,16 @@ class Update extends Connection {
             return false;
         } 
     }
+
+    public function Update_Blog($id, $title, $category, $blog) {
+        $query = "UPDATE blog_posts SET title = ?, category = ?, blog = ? WHERE id = ?";
+        if ($this->con->connect()->execute_query($query, [$title, $category, $blog, $id])){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
 
 

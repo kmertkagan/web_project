@@ -30,10 +30,7 @@ class Delete extends Connection {
         }
     }
 
-    public function Delete_Contact($id){
-
-    }
-
+    
 }
 
 

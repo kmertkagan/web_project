@@ -16,6 +16,7 @@ include __DIR__."/model/Update.php";
 
 if (isset($_SESSION["id"])){
     $blogs = new Select();
+    echo "<br><br><a onclick=\"return confirm('Silmek istediğinize emin misiniz?')\" href=\"controller/delete_user_action.php?id=".$_SESSION["id"]."\""." style=\"color:red\">Hesabı Sil</a><br><br>";
     echo "<h1>Yazdıklarım:</h1><br><br><br><br>";
     if ($specifed_blogs = $blogs->Select_Specified_Blogs(["bloggerId" => $_SESSION["id"]])){
         foreach ($specifed_blogs as $each_blog){

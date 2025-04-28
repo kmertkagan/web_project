@@ -35,14 +35,26 @@ $blog = new Select();
 if ($blog_datas = $blog->Select_Specified_Blogs(["id"=>$get_id])){
     $blogger_data = $blogger->Select_Specified_Bloggers(["id"=>$blog_datas[0]["bloggerId"]]);
     // print_r($blogger_data[0]);
-    if (($_SESSION['id'] ?? null) == $blogger_data[0]['id']) { // yazar gerçekten blogu yazan kişi mi? eğer id'si yoksa null döner bu da zaten sağlanmaz
+    if (($_SESSION['id'] ?? null) == $blogger_data[0]['id'] || $_SESSION["role_id"] == 2) { // yazar gerçekten blogu yazan kişi mi ya da admin mi? eğer id'si yoksa null döner bu da zaten sağlanmaz
+        
         if($delete_blog->Delete_Blog($_GET["id"])){
-            echo "<br><br><h1>Başarıyla Silindi.</h1>"; 
+            if ($_SESSION["role_id"] == 2){
+                echo "<br><br><h1>Blog Başarıyla Silindi.</h1>"; 
+            echo "<script>
+            setTimeout(() => {
+                        window.location.href = \"../dashboard\";
+                    }, 10000);
+                    </script>"; 
+            } 
+            else {
+                echo "<br><br><h1>Blogunuzu Başarıyla Sildiniz.</h1>"; 
             echo "<script>
             setTimeout(() => {
                         window.location.href = \"../index\";
                     }, 10000);
-                    </script>";            
+                    </script>"; 
+            }
+                       
         }
 
     }

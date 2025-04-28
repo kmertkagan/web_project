@@ -32,6 +32,7 @@ if (isset($username) && isset($password) && strlen($password) > 0){
         /* Yeni session türetme ve session'a değerleri yükleme */
         session_regenerate_id();
         $_SESSION["id"] = $rows[0]["id"];
+        $_SESSION["role_id"] = $rows[0]["role_id"];
         $_SESSION["username"] = $rows[0]["username"];
         $_SESSION["name"] = $rows[0]["name"];
         $_SESSION["surname"] = $rows[0]["surname"];

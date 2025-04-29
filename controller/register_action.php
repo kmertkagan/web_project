@@ -24,8 +24,8 @@ if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["confi
             $age = $_POST["age"];
             $gender = $_POST["gender"];
             
-            $save_user = new Bloggers();
-            if ($save_user->Insert_BloggerUser($username, $password, $name, $surname, $age, $gender)){
+            $save_user = new Insert();
+            if ($save_user->Insert_Bloggers_Table($username, $password, $name, $surname, $age, $gender)){
                 http_response_code(200);
                 echo(json_encode(["success"=>true, "message"=>"Basariyla kayit oldunuz. Giris yapabilirsiniz."]));
             }

@@ -11,17 +11,17 @@ class Insert extends Connection {
         $this->con = new Connection();
     }
 
-    public function Insert_Bloggers_Table($username, $name, $surname, $age, $gender) {
+    public function Insert_Bloggers_Table($username, $password, $name, $surname, $age, $gender){
 
-        $query = "INSERT INTO bloggers (username, name, surname, age, gender) VALUES (?, ?, ?, ?, ?)";
-        if ($this->con->connect()->execute_query($query, [$username, $name, $surname, $age, $gender])){
-            echo "Başariyla Kaydedildi.";
+        $query = "INSERT INTO bloggers (username, password, name, surname, age, gender) VALUES (?, ?, ?, ?, ?, ?)";
+
+        if ($this->con->connect()->execute_query($query, [$username, $password, $name, $surname, $age, $gender])){
             $this->con->connect()->close();
             return true;
         }
         else {
-            echo "Hata Oluştu.";
             $this->con->connect()->close();
+            return false;
         }
     }
 

@@ -32,12 +32,8 @@ xmlhttp.onreadystatechange = function () {
 
 <div class="panel-wrapper">
     <div class="button-link" >
-            <?php
-                if (isset($_SERVER["HTTP_REFERER"])){
-                    echo "<a href=". $_SERVER["HTTP_REFERER"].">Geri Gel</a><br><br>";
-                }
-            ?>
-        </div>
+      <a href="index">Ana Sayfaya Dön</a>
+    </div>
     <div class="title">
         <h1>Hoşgeldiniz, <?php echo $_SESSION["username"]?>. Admin işlemlerini aşağıdan yapabilirsiniz.</h1>
     </div>

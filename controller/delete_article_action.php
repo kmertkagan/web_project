@@ -43,7 +43,7 @@ if ($blog_datas = $blog->Select_Specified_Blogs(["id"=>$get_id])){
             echo "<script>
             setTimeout(() => {
                         window.location.href = \"../dashboard\";
-                    }, 10000);
+                    }, 1000);
                     </script>"; 
             } 
             else {
@@ -51,7 +51,7 @@ if ($blog_datas = $blog->Select_Specified_Blogs(["id"=>$get_id])){
             echo "<script>
             setTimeout(() => {
                         window.location.href = \"../index\";
-                    }, 10000);
+                    }, 1000);
                     </script>"; 
             }
                        

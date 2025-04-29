@@ -47,6 +47,7 @@ if ($bloggers = $blogger->Select_Specified_Bloggers(["id"=>$get_id])){
             } else {
                 $_SESSION = array();
                 session_destroy();
+                session_regenerate_id();
                 echo "<br><br><h1>Hesabını Başarıyla Sildin.</h1>";
                 echo "<script>
                 setTimeout(() => {

@@ -36,9 +36,9 @@ if ($blog_datas = $blog->Select_Specified_Blogs(["id"=>$get_id])){
     foreach ($blog_datas as $blog_data) 
     {
         
-        echo "<h2>Yazar: "."<strong class='blogger'>".$blogger_data[0]["username"]."</strong>"."</h2>";
+        echo "<h2>Yazar: "."<strong class='blogger'>".htmlspecialchars($blogger_data[0]["username"])."</strong>"."</h2>";
         echo "<h2>Yazım Tarihi: "."<strong class='blogger'>".$blog_data["posted_on"]."</strong>"."</h2><br><div class='show_article'>";
-        echo "<h1 class=\"title\">".$blog_data["title"]."</h1><br>";
+        echo "<h1 class=\"title\">".htmlspecialchars($blog_data["title"])."</h1><br>";
         echo $blog_data["blog"]."</div>";
     }
 }

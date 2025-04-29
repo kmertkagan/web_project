@@ -21,11 +21,11 @@ if (isset($_SESSION["id"])){
     if ($specifed_blogs = $blogs->Select_Specified_Blogs(["bloggerId" => $_SESSION["id"]])){
         foreach ($specifed_blogs as $each_blog){
             echo "Yazar: "."<strong class='blogger'>".htmlspecialchars($_SESSION["username"])."</strong>";
-            echo "<a class='blog' href='get_article?id=".strval($each_blog["id"])."'>"."<h3>".$each_blog["title"]. "</h3></a>";
+            echo "<a class='blog' href='get_article?id=".htmlspecialchars(strval($each_blog["id"]))."'>"."<h3>".htmlspecialchars($each_blog["title"]). "</h3></a>";
             echo "<br>";
-            echo "Kategori: ".$each_blog["category"]."<p>".$each_blog["posted_on"]."</p>";
+            echo "Kategori: ".htmlspecialchars($each_blog["category"])."<p>".$each_blog["posted_on"]."</p>";
             echo "<img src='./view/images/icons8-click-50.png' width='30' height='30'> ".$each_blog["clicked"]."<br>";
-            echo "<a href=\"update_article?id=".$each_blog["id"]."\"" ." style=\"color:#04ff00\">Düzenle</p> <a onclick=\"return confirm('Silmek istediğinize emin misiniz?')\" href=\"controller/delete_article_action.php?id=".$each_blog["id"]."\""." style=\"color:red\">Sil</a>";
+            echo "<a href=\"update_article?id=".htmlspecialchars($each_blog["id"])."\"" ." style=\"color:#04ff00\">Düzenle</p> <a onclick=\"return confirm('Silmek istediğinize emin misiniz?')\" href=\"controller/delete_article_action.php?id=".htmlspecialchars($each_blog["id"])."\""." style=\"color:red\">Sil</a>";
             echo "<hr>";
 
         }

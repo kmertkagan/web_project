@@ -32,7 +32,8 @@ xmlhttp.onreadystatechange = function () {
 
 <div class="panel-wrapper">
     <div class="button-link" >
-      <a href="index">Ana Sayfaya Dön</a>
+      <a href="index">Ana Sayfa</a>
+      <br>
     </div>
     <div class="title">
         <h1>Hoşgeldiniz, <?php echo $_SESSION["username"]?>. Admin işlemlerini aşağıdan yapabilirsiniz.</h1>

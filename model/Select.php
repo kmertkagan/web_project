@@ -78,7 +78,7 @@ class Select extends Connection {
             $filter2 = []; # for use join
             foreach ($check as $key => $value) {
                 $value = mysqli_escape_string($this->con->connect(),$value); # for prevent sqli
-                $filter2[] = "$key='$value'"; // basically adding a new element to arraylist, https://www.php.net/manual/en/language.types.array.php look at the example 10 (f*ck the php)
+                $filter2[] = "$key='$value'"; // basically adding a new element to arraylist, https://www.php.net/manual/en/language.types.array.php look at the example 10
                             
             }
             $filter = join(" AND ", $filter2);
@@ -115,7 +115,7 @@ class Select extends Connection {
             $filter2 = []; # for use join
             foreach ($check as $key => $value) {
                 $value = mysqli_escape_string($this->con->connect(),$value); # for prevent sqli
-                $filter2[] = "$key='$value'"; // basically adding a new element to arraylist, https://www.php.net/manual/en/language.types.array.php look at the example 10 (f*ck the php)          
+                $filter2[] = "$key='$value'"; // basically adding a new element to arraylist, https://www.php.net/manual/en/language.types.array.php look at the example 10        
             }
             $filter = join(" AND ", $filter2);
         }       

@@ -34,7 +34,7 @@ $blogger = new Select();
 
 if ($bloggers = $blogger->Select_Specified_Bloggers(["id"=>$get_id])){
     // print_r($blogger_data[0]);
-    if (($_SESSION['id'] ?? null) == $bloggers[0]['id'] || $_SESSION["role_id"] == 2) { // yazar gerçekten blogu yazan kişi mi? eğer id'si yoksa null döner bu da zaten sağlanmaz ya da admin mi?
+    if (( ($_SESSION['id'] ?? null) == $bloggers[0]['id'] || ($_SESSION["role_id"] ?? null ) == 2))  { // aksiyon gerçekten silmeye çalışan kişi mi ya da admin mi ?
         if($delete_blogger->Delete_Blogger($_GET["id"])){
             
             if ($_SESSION["role_id"] == 2) {

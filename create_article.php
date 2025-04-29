@@ -39,7 +39,6 @@ if (isset($_SESSION["username"])) {
         
 
         $q1 = new Insert();        
-        http_response_code(400);
         
         
         date_default_timezone_set('Europe/Istanbul');
@@ -48,7 +47,6 @@ if (isset($_SESSION["username"])) {
             if ($q1->Insert_Blog_Posts_Table($bloggerId,$title ,$category, $blog, $date, 0))
             {   
                 echo "Blog Oluşturuldu.";
-                sleep(2);
                 header("Location: ". "articles");            
             }
         }

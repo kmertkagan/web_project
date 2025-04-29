@@ -1,6 +1,6 @@
 <?php
 session_start();
-include __DIR__."/../model/Bloggers.php";
+include __DIR__."/../model/Insert.php";
 include __DIR__."/../model/Select.php";
 
 header("Content-Type: application/json;charset=UTF-8");

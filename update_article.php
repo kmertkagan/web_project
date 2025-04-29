@@ -42,7 +42,7 @@ if ($blog_datas = $blog->Select_Specified_Blogs(["id"=>$get_id])){
     else {
         http_response_code(403);
         echo "<strong style=\"color:red\">Blog sahibi değilsiniz, o yüzden blog'u düzenleyemezsiniz!  </strong><br><br>";
-        echo "<img src=\"view/images/yasak-ersoy.gif\">";
+        echo "<img src=\"view/images/rock-bald-head.gif\">";
     }
 }
 

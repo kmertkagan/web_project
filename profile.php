@@ -34,7 +34,6 @@ if (isset($_SESSION["id"])){
 else {
     http_response_code(403);
     echo "<strong style=\"color:red\">Giriş Yapmalısınız!</strong><br><br>";
-    echo "<img src=\"view/images/yasak-ersoy.gif\">";
 }
 ?>
 </div>

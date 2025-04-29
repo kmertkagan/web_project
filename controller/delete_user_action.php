@@ -61,7 +61,6 @@ if ($bloggers = $blogger->Select_Specified_Bloggers(["id"=>$get_id])){
     else {
         http_response_code(403);
         echo "<strong style=\"color:red\">Bu hesaba otentike değilsin. O yüzden bu hesabı silemezsin.</strong><br><br>";
-        echo "<img src=\"../view/images/yasak-ersoy.gif\">";
     }
 }
 

@@ -9,41 +9,6 @@
 
 <script src="view/js/tinymce/tinymce.min.js"></script>
 <script src="view/js/tinymce/init.js"></script>
-<script>
-$(document).ready(function() {
-    $("#register").on("submit", function(e) {
-        e.preventDefault(); // Formun kendi submitini engelle
-
-        $.ajax({
-            url: $(this).attr("action"),
-            type: $(this).attr("method"),
-            data: $(this).serialize(),
-            dataType: "json", // JSON olarak otomatik çözümlesin
-            success: function(response) {
-                if (response.success) {
-                    $("#message").css("color", "#04ff00").text(response.message);
-                    $("#register")[0].reset();
-                    // yönlendirme
-                    setTimeout(() => {
-                        window.location.href = "login";
-                    }, 1000); 
-                } else {
-                    $("#message").css("color", "red").text(response.message);
-                }
-            },
-            error: function(xhr) {
-                // Sunucu hata dönerse (örneğin 400 gibi)
-                let response = xhr.responseJSON;
-                if(response && response.message) {
-                    $("#message").css("color", "red").text(response.message);
-                } else {
-                    $("#message").css("color", "red").text("Bilinmeyen bir hata oluştu.");
-                }
-            }
-        });
-    });
-});
-</script>
 
 
 <div class="logo-wrapper">

@@ -42,17 +42,16 @@ if ($bloggers = $blogger->Select_Specified_Bloggers(["id"=>$get_id])){
                 echo "<script>
                 setTimeout(() => {
                     window.location.href = \"../dashboard\";
-                    }, 1000);
+                    }, 10000);
                     </script>";
             } else {
                 $_SESSION = array();
                 session_destroy();
-                session_regenerate_id();
                 echo "<br><br><h1>Hesabını Başarıyla Sildin.</h1>";
                 echo "<script>
                 setTimeout(() => {
                     window.location.href = \"../index\";
-                    }, 1000);
+                    }, 10000);
                     </script>";            
                     }
         }
